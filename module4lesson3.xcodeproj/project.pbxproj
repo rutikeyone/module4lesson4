@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		49D1873A2FCB0B6200670C29 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 49D187392FCB0B6200670C29 /* Alamofire */; };
+		49D1874A2FCB202B00670C29 /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49D187492FCB202B00670C29 /* FactoryKit */; };
+		49D187952FCB6F0400670C29 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 49D187942FCB6F0400670C29 /* SDWebImage */; };
+		49D187972FCB6F0400670C29 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49D187962FCB6F0400670C29 /* SDWebImageMapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		49D1870C2FCA202200670C29 /* module4lesson3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = module4lesson3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D187952FCB6F0400670C29 /* SDWebImage in Frameworks */,
+				49D1874A2FCB202B00670C29 /* FactoryKit in Frameworks */,
+				49D187972FCB6F0400670C29 /* SDWebImageMapKit in Frameworks */,
+				49D1873A2FCB0B6200670C29 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,10 @@
 			);
 			name = module4lesson3;
 			packageProductDependencies = (
+				49D187392FCB0B6200670C29 /* Alamofire */,
+				49D187492FCB202B00670C29 /* FactoryKit */,
+				49D187942FCB6F0400670C29 /* SDWebImage */,
+				49D187962FCB6F0400670C29 /* SDWebImageMapKit */,
 			);
 			productName = module4lesson3;
 			productReference = 49D1870C2FCA202200670C29 /* module4lesson3.app */;
@@ -104,9 +119,15 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 49D187032FCA202200670C29;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				49D187382FCB0B6200670C29 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				49D187482FCB202B00670C29 /* XCRemoteSwiftPackageReference "Factory" */,
+				49D187932FCB6F0400670C29 /* XCRemoteSwiftPackageReference "sdwebimage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 49D1870D2FCA202200670C29 /* Products */;
 			projectDirPath = "";
@@ -150,9 +171,10 @@
 				INFOPLIST_FILE = module4lesson3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -182,9 +204,10 @@
 				INFOPLIST_FILE = module4lesson3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -345,6 +368,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49D187382FCB0B6200670C29 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.0;
+			};
+		};
+		49D187482FCB202B00670C29 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.5;
+			};
+		};
+		49D187932FCB6F0400670C29 /* XCRemoteSwiftPackageReference "sdwebimage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sdwebimage/sdwebimage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49D187392FCB0B6200670C29 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49D187382FCB0B6200670C29 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		49D187492FCB202B00670C29 /* FactoryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49D187482FCB202B00670C29 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = FactoryKit;
+		};
+		49D187942FCB6F0400670C29 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49D187932FCB6F0400670C29 /* XCRemoteSwiftPackageReference "sdwebimage" */;
+			productName = SDWebImage;
+		};
+		49D187962FCB6F0400670C29 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49D187932FCB6F0400670C29 /* XCRemoteSwiftPackageReference "sdwebimage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49D187042FCA202200670C29 /* Project object */;
 }

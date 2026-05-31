@@ -1,0 +1,16 @@
+// MARK: - News Feed
+"news.title" = "Новости";
+"news.search.placeholder" = "Введите запрос";
+"news.search.default_query" = "Программирование";
+"news.section.all" = "Все новости";
+
+// MARK: - Search Empty
+"search.empty.title" = "Поиск новостей";
+"search.empty.description" = "Введите запрос, чтобы найти новости";
+
+// MARK: - Error
+"error.title" = "Упс! Что-то пошло не так";
+"error.retry" = "Повторить";
+
+// MARK: - Design System Examples
+"example.error_state.title" = "Ошибка";
