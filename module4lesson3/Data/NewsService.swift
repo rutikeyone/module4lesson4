@@ -9,19 +9,19 @@ import Foundation
 import Alamofire
 
 protocol NewsServiceProtocol {
-    func fetchNews(_ searchQuary: String, completion: @escaping (Result<NewsResponse, Error>) -> Void)
+    func fetchNews(_ searchQuery: String, completion: @escaping (Result<NewsResponse, Error>) -> Void)
+    func fetchArticle(by id: String, completion: @escaping (Result<Article, Error>) -> Void)
 }
 
 nonisolated final class NewsService: NewsServiceProtocol {
-    func fetchNews(_ searchQuary: String, completion: @escaping (Result<NewsResponse, Error>) -> Void) {
-        let parameters: Parameters = [
-            "q": searchQuary,
-            "sortBy": "publishedAt",
-            "apiKey": "8ebcdaa0139a47d1a7e1e77ad52a2b0a",
-            "pageSize": 20,
-        ]
-        
-        AF.request("https://newsapi.org/v2/everything", parameters: parameters)
+    private let session: Session
+
+    init(session: Session) {
+        self.session = session
+    }
+
+    func fetchNews(_ searchQuery: String, completion: @escaping (Result<NewsResponse, Error>) -> Void) {
+        session.request(NewsRouter.latest(query: searchQuery))
             .validate()
             .responseDecodable(of: NewsResponse.self) { response in
                 switch response.result {
@@ -29,7 +29,28 @@ nonisolated final class NewsService: NewsServiceProtocol {
                     completion(.success(data))
                 case .failure(let error):
                     completion(.failure(error))
+                }
             }
-        }
     }
+
+    func fetchArticle(by id: String, completion: @escaping (Result<Article, Error>) -> Void) {
+        session.request(NewsRouter.article(id: id))
+            .validate()
+            .responseDecodable(of: NewsResponse.self) { response in
+                switch response.result {
+                case .success(let data):
+                    if let article = data.articles.first {
+                        completion(.success(article))
+                    } else {
+                        completion(.failure(NewsServiceError.articleNotFound))
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+}
+
+enum NewsServiceError: Error {
+    case articleNotFound
 }

@@ -11,10 +11,14 @@
 		49D1874A2FCB202B00670C29 /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49D187492FCB202B00670C29 /* FactoryKit */; };
 		49D187952FCB6F0400670C29 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 49D187942FCB6F0400670C29 /* SDWebImage */; };
 		49D187972FCB6F0400670C29 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49D187962FCB6F0400670C29 /* SDWebImageMapKit */; };
+		49EFB6C22FD57E2200F7E1A5 /* Pulse in Frameworks */ = {isa = PBXBuildFile; productRef = 49EFB6C12FD57E2200F7E1A5 /* Pulse */; };
+		49EFB6C42FD57E2200F7E1A5 /* PulseProxy in Frameworks */ = {isa = PBXBuildFile; productRef = 49EFB6C32FD57E2200F7E1A5 /* PulseProxy */; };
+		49EFB6C62FD57E2200F7E1A5 /* PulseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 49EFB6C52FD57E2200F7E1A5 /* PulseUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		49D1870C2FCA202200670C29 /* module4lesson3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = module4lesson3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49D1A1010000000000000001 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,6 +49,9 @@
 			files = (
 				49D187952FCB6F0400670C29 /* SDWebImage in Frameworks */,
 				49D1874A2FCB202B00670C29 /* FactoryKit in Frameworks */,
+				49EFB6C22FD57E2200F7E1A5 /* Pulse in Frameworks */,
+				49EFB6C42FD57E2200F7E1A5 /* PulseProxy in Frameworks */,
+				49EFB6C62FD57E2200F7E1A5 /* PulseUI in Frameworks */,
 				49D187972FCB6F0400670C29 /* SDWebImageMapKit in Frameworks */,
 				49D1873A2FCB0B6200670C29 /* Alamofire in Frameworks */,
 			);
@@ -56,6 +63,7 @@
 		49D187032FCA202200670C29 = {
 			isa = PBXGroup;
 			children = (
+				49D1A1010000000000000002 /* Config */,
 				49D1870E2FCA202200670C29 /* module4lesson3 */,
 				49D1870D2FCA202200670C29 /* Products */,
 			);
@@ -67,6 +75,14 @@
 				49D1870C2FCA202200670C29 /* module4lesson3.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		49D1A1010000000000000002 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				49D1A1010000000000000001 /* Secrets.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +109,9 @@
 				49D187492FCB202B00670C29 /* FactoryKit */,
 				49D187942FCB6F0400670C29 /* SDWebImage */,
 				49D187962FCB6F0400670C29 /* SDWebImageMapKit */,
+				49EFB6C12FD57E2200F7E1A5 /* Pulse */,
+				49EFB6C32FD57E2200F7E1A5 /* PulseProxy */,
+				49EFB6C52FD57E2200F7E1A5 /* PulseUI */,
 			);
 			productName = module4lesson3;
 			productReference = 49D1870C2FCA202200670C29 /* module4lesson3.app */;
@@ -127,6 +146,7 @@
 				49D187382FCB0B6200670C29 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				49D187482FCB202B00670C29 /* XCRemoteSwiftPackageReference "Factory" */,
 				49D187932FCB6F0400670C29 /* XCRemoteSwiftPackageReference "sdwebimage" */,
+				49EFB6C02FD57E2200F7E1A5 /* XCRemoteSwiftPackageReference "Pulse" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 49D1870D2FCA202200670C29 /* Products */;
@@ -161,6 +181,7 @@
 /* Begin XCBuildConfiguration section */
 		49D187202FCA202400670C29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49D1A1010000000000000001 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -194,6 +215,7 @@
 		};
 		49D187212FCA202400670C29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49D1A1010000000000000001 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -394,6 +416,14 @@
 				minimumVersion = 5.21.7;
 			};
 		};
+		49EFB6C02FD57E2200F7E1A5 /* XCRemoteSwiftPackageReference "Pulse" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Pulse";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -416,6 +446,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 49D187932FCB6F0400670C29 /* XCRemoteSwiftPackageReference "sdwebimage" */;
 			productName = SDWebImageMapKit;
+		};
+		49EFB6C12FD57E2200F7E1A5 /* Pulse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49EFB6C02FD57E2200F7E1A5 /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = Pulse;
+		};
+		49EFB6C32FD57E2200F7E1A5 /* PulseProxy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49EFB6C02FD57E2200F7E1A5 /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = PulseProxy;
+		};
+		49EFB6C52FD57E2200F7E1A5 /* PulseUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49EFB6C02FD57E2200F7E1A5 /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = PulseUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

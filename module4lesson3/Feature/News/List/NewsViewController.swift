@@ -63,6 +63,14 @@ class NewsViewController: UIViewController {
         newsView.onRetry = { [weak self] in
             self?.presenter.retry()
         }
+        
+        newsView.onArticleSelected = { [weak self] article in
+            guard let self, let navigationController else { return }
+            
+            let viewController = NewsDetailsViewController.create(article.articleId)
+            navigationController.pushViewController(viewController, animated: true)
+        }
+        
         view.addSubview(newsView)
 
         NSLayoutConstraint.activate([

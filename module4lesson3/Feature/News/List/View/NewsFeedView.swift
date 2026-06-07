@@ -27,6 +27,8 @@ final class NewsFeedView: UIView {
         return view
     }()
 
+    var onArticleSelected: ((Article) -> Void)?
+
     private var featured: Article?
     private var articles: [Article] = []
 
@@ -65,7 +67,7 @@ final class NewsFeedView: UIView {
     func showArticles(_ articles: [Article]) {
         featured = articles.first
         self.articles = Array(articles.dropFirst())
-        
+    
         tableView.reloadData()
     }
 }
@@ -108,10 +110,10 @@ extension NewsFeedView: UITableViewDataSource {
 
         if let featured = self.featured {
             cell.configure(
-                source: featured.source.name,
+                source: featured.sourceName ?? "",
                 title: featured.title,
-                meta: NewsDateFormatter.string(from: featured.publishedAt),
-                imageURL: URL(string: featured.urlToImage ?? "")
+                meta: NewsDateFormatter.string(from: featured.pubDate),
+                imageURL: URL(string: featured.imageUrl ?? "")
             )
         }
 
@@ -129,11 +131,11 @@ extension NewsFeedView: UITableViewDataSource {
         let article = articles[indexPath.row]
         
         cell.configure(
-            source: article.source.name,
+            source: article.sourceName ?? "",
             title: article.title,
             description: article.description,
-            time: NewsDateFormatter.string(from: article.publishedAt),
-            imageURL: URL(string: article.urlToImage ?? "")
+            time: NewsDateFormatter.string(from: article.pubDate),
+            imageURL: URL(string: article.imageUrl ?? "")
         )
         
         return cell
@@ -147,5 +149,15 @@ extension NewsFeedView: UITableViewDataSource {
 extension NewsFeedView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        switch Section(rawValue: indexPath.section) {
+        case .featured:
+            guard let featured else { return }
+            onArticleSelected?(featured)
+        case .list:
+            onArticleSelected?(articles[indexPath.row])
+        case .none:
+            break
+        }
     }
 }

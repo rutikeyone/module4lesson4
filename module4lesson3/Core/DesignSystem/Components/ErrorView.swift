@@ -1,5 +1,5 @@
 //
-//  NewsErrorView.swift
+//  ErrorView.swift
 //  module4lesson3
 //
 //  Created by Andrew on 30.05.2026.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class NewsErrorView: UIView {
+final class ErrorView: UIView {
 
     var onRetry: (() -> Void)?
 

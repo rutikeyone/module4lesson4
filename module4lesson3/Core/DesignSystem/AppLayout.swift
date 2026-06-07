@@ -23,4 +23,7 @@ enum AppSize {
     static let errorIconContainer: CGFloat = 104
     static let errorIconGlyph: CGFloat = 52
     static let buttonHeight: CGFloat = 50
+    static let sourceAvatar: CGFloat = 34
+    static let noticeIcon: CGFloat = 38
+    static let heroAspectRatio: CGFloat = 3.0 / 4.0
 }

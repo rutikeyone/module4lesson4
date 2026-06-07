@@ -9,9 +9,10 @@ import Foundation
 
 enum NewsDateFormatter {
 
-    private static let isoFormatter: ISO8601DateFormatter = {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime]
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.timeZone = TimeZone(identifier: "UTC")
         return formatter
     }()
 
@@ -19,13 +20,12 @@ enum NewsDateFormatter {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
         formatter.locale = Locale.current
-        
         return formatter
     }()
 
-    static func string(from publishedAt: String) -> String {
-        guard let date = isoFormatter.date(from: publishedAt) else {
-            return publishedAt
+    static func string(from pubDate: String) -> String {
+        guard let date = dateFormatter.date(from: pubDate) else {
+            return pubDate
         }
         return relativeFormatter.localizedString(for: date, relativeTo: Date())
     }

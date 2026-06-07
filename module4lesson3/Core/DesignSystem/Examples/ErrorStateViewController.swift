@@ -2,7 +2,7 @@ import UIKit
 
 final class ErrorStateViewController: UIViewController {
 
-    private let errorView = NewsErrorView()
+    private let errorView = ErrorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()

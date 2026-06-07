@@ -9,6 +9,13 @@ enum Strings {
         static let sectionAll = "news.section.all".localized
     }
 
+    enum NewsDetails {
+        static let read = "news.details.read".localized
+        static let noticeTitle = "news.details.notice.title".localized
+        static let noticeSubtitle = "news.details.notice.subtitle".localized
+        static let sourceButton = "news.details.source_button".localized
+    }
+
     enum SearchEmpty {
         static let title = "search.empty.title".localized
         static let description = "search.empty.description".localized

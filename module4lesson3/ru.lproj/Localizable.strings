@@ -4,6 +4,12 @@
 "news.search.default_query" = "Программирование";
 "news.section.all" = "Все новости";
 
+// MARK: - News Details
+"news.details.read" = "Читать";
+"news.details.notice.title" = "Полный текст на источнике";
+"news.details.notice.subtitle" = "Продолжение материала доступно на источнике";
+"news.details.source_button" = "Источник";
+
 // MARK: - Search Empty
 "search.empty.title" = "Поиск новостей";
 "search.empty.description" = "Введите запрос, чтобы найти новости";

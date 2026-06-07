@@ -20,6 +20,10 @@ final class NewsView: UIView {
         didSet { errorView.onRetry = onRetry }
     }
 
+    var onArticleSelected: ((Article) -> Void)? {
+        didSet { feedView.onArticleSelected = onArticleSelected }
+    }
+
     private let feedView: NewsFeedView = {
         let view = NewsFeedView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +31,7 @@ final class NewsView: UIView {
         return view
     }()
 
-    private let searchEmptyView: NewsEmptyView = {
+    private let emptyView: NewsEmptyView = {
         let view = NewsEmptyView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
@@ -35,8 +39,8 @@ final class NewsView: UIView {
         return view
     }()
 
-    private let errorView: NewsErrorView = {
-        let view = NewsErrorView()
+    private let errorView: ErrorView = {
+        let view = ErrorView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
 
@@ -65,7 +69,7 @@ final class NewsView: UIView {
         backgroundColor = AppColor.backgroundPrimary
         
         setupFeedView()
-        setupSearchEmptyView()
+        setupEmptyView()
         setupErrorView()
         setupActivityIndicator()
     }
@@ -81,14 +85,14 @@ final class NewsView: UIView {
         ])
     }
 
-    private func setupSearchEmptyView() {
-        addSubview(searchEmptyView)
+    private func setupEmptyView() {
+        addSubview(emptyView)
 
         NSLayoutConstraint.activate([
-            searchEmptyView.topAnchor.constraint(equalTo: topAnchor),
-            searchEmptyView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            searchEmptyView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            searchEmptyView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            emptyView.topAnchor.constraint(equalTo: topAnchor),
+            emptyView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            emptyView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 
@@ -116,7 +120,7 @@ final class NewsView: UIView {
         switch state {
         case .idle:
             hideAll()
-            searchEmptyView.isHidden = false
+            emptyView.isHidden = false
         case .loading:
             hideAll()
             activityIndicator.startAnimating()
@@ -133,7 +137,7 @@ final class NewsView: UIView {
 
     private func hideAll() {
         feedView.isHidden = true
-        searchEmptyView.isHidden = true
+        emptyView.isHidden = true
         errorView.isHidden = true
         activityIndicator.stopAnimating()
     }

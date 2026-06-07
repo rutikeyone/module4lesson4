@@ -1,0 +1,22 @@
+// MARK: - News Feed
+"news.title" = "News";
+"news.search.placeholder" = "Search";
+"news.search.default_query" = "Programming";
+"news.section.all" = "All News";
+
+// MARK: - News Details
+"news.details.read" = "Read";
+"news.details.notice.title" = "Full text on the source";
+"news.details.notice.subtitle" = "Continue reading on the source website";
+"news.details.source_button" = "Source";
+
+// MARK: - Search Empty
+"search.empty.title" = "Search News";
+"search.empty.description" = "Enter a query to find news";
+
+// MARK: - Error
+"error.title" = "Oops! Something went wrong";
+"error.retry" = "Retry";
+
+// MARK: - Design System Examples
+"example.error_state.title" = "Error";

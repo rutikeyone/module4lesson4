@@ -13,7 +13,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        #if DEBUG
+        let window = PulseConsoleWindow(windowScene: windowScene)
+        #else
         let window = UIWindow(windowScene: windowScene)
+        #endif
         
         let vc = NewsViewController.create()
         let navigationVC = UINavigationController(rootViewController: vc)

@@ -1,10 +1,19 @@
 nonisolated struct Article: Decodable, Sendable {
-    let source: Source
-    let author: String?
+    let articleId: String
     let title: String
     let description: String?
-    let url: String
-    let urlToImage: String?
-    let publishedAt: String
-    let content: String?
+    let imageUrl: String?
+    let pubDate: String
+    let sourceName: String?
+    let link: String?
+
+    enum CodingKeys: String, CodingKey {
+        case articleId = "article_id"
+        case title
+        case description
+        case imageUrl = "image_url"
+        case pubDate
+        case sourceName = "source_name"
+        case link
+    }
 }
