@@ -31,7 +31,11 @@ final class NewsDetailsContentView: UIView {
         view.showsVerticalScrollIndicator = true
         view.contentInsetAdjustmentBehavior = .never
         view.alwaysBounceVertical = true
-        
+
+        if #available(iOS 26.0, *) {
+            view.topEdgeEffect.isHidden = true
+        }
+
         return view
     }()
 
